@@ -48,14 +48,8 @@ public class PersonalAccount {
     public int getAccountNumber() {
         return accountNumber;
     }
+
     public String getAccountHolder() {
         return accountHolder;
     }
 }
-
-//int getAccountNumber():
-//
-//A method to retrieve the account number.
-//String getAccountHolder():
-//
-//A method to retrieve the account holder's name.
