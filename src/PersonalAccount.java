@@ -17,14 +17,14 @@ public class PersonalAccount {
         if(transactionCount < transactions.length) {
             transactions[transactionCount] = depositTransaction;
             transactionCount++;
+            this.balance += amount;
         }
-        this.balance += amount;
     }
 
     public void withdraw(double amount) {
         Amount withdraw = new Amount(amount, TransactionType.WITHDRAWAL);
         if(transactionCount < transactions.length) {
-            if(withdraw.getAmount() <= amount) {
+            if(withdraw.getAmount() <= balance) {
                 transactions[transactionCount] = withdraw;
                 transactionCount++;
                 this.balance -= amount;
@@ -40,14 +40,19 @@ public class PersonalAccount {
             System.out.println(transactions[i]);
         }
     }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    public String getAccountHolder() {
+        return accountHolder;
+    }
 }
 
-//void printTransactionHistory():
-//
-//A method to print the transaction history of the account. Iterate through the transactions array and display each transaction, including the transactionType and amount.
-//double getBalance():
-//
-//A method to retrieve the current balance of the account.
 //int getAccountNumber():
 //
 //A method to retrieve the account number.
